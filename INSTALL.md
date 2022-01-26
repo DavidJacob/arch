@@ -138,8 +138,8 @@
     ```bash
     grub-mkconfig -o /boot/grub/grub.cfg
     ```
-16. Exit `chroot` and reboot.
+16. Exit `chroot`, unmount `/mnt` folder and reboot.
 17. Connect to the network:
     ```bash
-    nmcli d wifi connect ${SSID} password ${PASSWORD} ifname ${DEVICE}
+    sudo nmcli --ask d wifi connect ${SSID}
     ```

@@ -42,7 +42,7 @@ systemctl enable acpid
 
 # Configure user
 useradd -m david
-echo :password | chpasswd
+echo david:password | chpasswd
 echo "david ALL=(ALL) ALL" >> /etc/sudoers.d/david
 
 
