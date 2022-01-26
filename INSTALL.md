@@ -110,7 +110,7 @@
     ```
 11. Create `fstab`:
     ```bash
-    genfstab -U /mnt /mnt/etc/fstab
+    genfstab -U /mnt >> /mnt/etc/fstab
     ```
 12. Enter installation
     ```bash
@@ -128,7 +128,7 @@
     mkinitcpio -p linux
     ```
 15. TODO: figure out how to do this with `refind`
-    Edit `/etc/default/grub.cfg`:
+    Edit `/etc/default/grub.cfg`. Replace `${UUID}` with the UUID of the encrypted partition, not the mapper device:
     ```bash
     ...
     GRUB_CMDLINE_LINUX_DEFAULT="loglevel=3 quiet cryptdevice=UUID=${UUID}:cryptroot root=/dev/mapper/cryptroot"

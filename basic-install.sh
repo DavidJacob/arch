@@ -20,13 +20,13 @@ echo root:password | chpasswd
 pacman -S acpi acpid acpi_call alacritty alsa-utils avahi \
     base-devel bash-completion bluez bluez-utils bridge-utils \
     cups dialog dnsmasq dnsutils dosfstools efibootmgr flatpak \
-    grub gvfs gvfs-smb hplip inetutils ipset iptables-nft linux-headers \
+    grub grub-btrfs gvfs gvfs-smb hplip inetutils ipset iptables-nft linux-headers \
     mtools networkmanager network-manager-applet nfs-utils nss-mdns ntfs-3g \
     openbsd-netcat openssh pipewire pipewire-alsa pipewire-jack pipewire-pulse \
     ranger reflector rsync terminus-font tlp wpa_supplicant xdg-user-dirs xdg-utils
 
 # Configure grub
-grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=GRUB
+grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB
 grub-mkconfig -o /boot/grub/grub.cfg
 
 # Enable services
