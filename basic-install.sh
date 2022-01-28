@@ -18,12 +18,12 @@ echo root:password | chpasswd
 
 # Install basic packages
 pacman -S acpi acpid acpi_call alacritty alsa-utils avahi \
-    base-devel bash-completion bluez bluez-utils bridge-utils \
-    cups dialog dnsmasq dnsutils dosfstools efibootmgr flatpak \
-    grub grub-btrfs gvfs gvfs-smb hplip inetutils ipset iptables-nft linux-headers \
-    mtools networkmanager network-manager-applet nfs-utils nss-mdns ntfs-3g \
-    openbsd-netcat openssh pipewire pipewire-alsa pipewire-jack pipewire-pulse \
-    ranger reflector rsync terminus-font tlp wpa_supplicant xdg-user-dirs xdg-utils
+    base-devel bash-completion bluez bluez-utils bolt bridge-utils \
+    cups dialog ddcutil ddcci-driver-linux-dkms dnsmasq dnsutils dosfstools efibootmgr flatpak fwupd \
+    grub grub-btrfs gvfs gvfs-smb hplip inetutils ipset iptables-nft linux-headers mtools \
+    networkmanager network-manager-applet nfs-utils noto-color-emoji-fontconfig noto-fonts-emoji nss-mdns ntfs-3g \
+    openbsd-netcat openssh pipewire pipewire-alsa pipewire-jack pipewire-pulse pipewire-v4l2 \
+    ranger reflector rsync terminus-font tlp ttf-victor-mono ttf-font-awesome v4l2-utils wpa_supplicant xdg-user-dirs xdg-utils xf86-video-nouveau
 
 # Configure grub
 grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB
@@ -45,5 +45,6 @@ useradd -m david
 echo david:password | chpasswd
 echo "david ALL=(ALL) ALL" >> /etc/sudoers.d/david
 
+usermod -aG wheel david
 
 printf "\e[1;32mBasic install complete!.\e[0m"

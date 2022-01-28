@@ -143,3 +143,55 @@
     ```bash
     sudo nmcli --ask d wifi connect ${SSID}
     ```
+18. Install and configure sway:
+    ```bash
+    sudo pacman -S sway swaylock swayidle xorg-xwayland
+    mkdir ~/.config/sway
+    cp /etc/sway/config ~/.config/sway/
+    ```
+    NOTE: at time of writing there is an issue with the `swayidle` install which causes the `pacman` command to fail. I simply removed it for this install.
+19. Install `yay`:
+    ```bash
+    git clone https://aur.archlinux.org/yay.git
+    cd yay
+    makepkg -si
+    ```
+20. Configure Ulauncher.
+    Add this line to set it as Sway menu shortcut:
+    ```bash
+    set $menu ulauncher | xargs swagmsg exec --
+    ```
+21. Configure hardware keys. You'll need to install a package for screen brightness:
+    ```bash
+    yay -S brightnessctl
+    ```
+    Add [the following directives](https://wiki.archlinux.org/title/Sway#Custom_keybindings) to your sway config.
+22. Install and configure waybar:
+    ```bash
+    yay -S community/waybar
+    mkdir ~/.config/waybar
+    cp /etc/xdg/waybar/* ~/.config/waybar/
+    ```
+23. Install nerd fonts:
+    ```bash
+    yay -S nerd-fonts-complete
+    ```
+24. Authorize CalDigit TS3 Plus (`bolt` package required):
+    ```bash
+    $ bolt list
+    Caldigit, Inc. TS3 Plus
+    ...
+    ...
+       uuid: UUID
+    ...
+    $ bolt authorize UUID
+    ```
+25. Configure DDC/DI:
+    ```bash
+    usermod -aG i2c david
+    ```
+    Load `i2c-dev` kernel module on startup by creating `/etc/modules-load.d/i2c-dev.conf`:
+    ```
+    # Support DDC/DI of external monitors via ddcutil
+    i2c-dev
+    ```
