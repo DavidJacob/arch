@@ -205,3 +205,11 @@
     tfswitch-bin
     yq
     ```
+28. Install and configure `timeshift`:
+    ```bash
+    $ yay -S timeshift timeshift-autosnap
+    ```
+    `timeshift` normally runs its GUI root which displeases Wayland (aka it won't start). To run `timeshift` under Wayland, you need to run this command:
+    ```bash
+    $ xhost si:localuser:root && sudo timeshift-gtk
+    ```
