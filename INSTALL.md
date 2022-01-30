@@ -195,3 +195,13 @@
     # Support DDC/DI of external monitors via ddcutil
     i2c-dev
     ```
+26. Install zplug:
+    ```bash
+    yay -S zplug
+    ```
+27. Install development tools:
+    ```
+    github-cli
+    tfswitch-bin
+    yq
+    ```
