@@ -202,6 +202,7 @@
 27. Install development tools:
     ```
     github-cli
+    neovim
     tfswitch-bin
     yq
     ```
@@ -213,3 +214,9 @@
     ```bash
     $ xhost si:localuser:root && sudo timeshift-gtk
     ```
+29. Installing virtualbox:
+    ```bash
+    $ yay -S virtualbox virtualbox-host-modules-arch
+    ```
+    note that `linux-headers` are also required for this but they should have been installed during `pacstrap`
+
