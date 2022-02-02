@@ -201,9 +201,13 @@
     ```
 27. Install development tools:
     ```
+    aws-cli-v2-bin
     github-cli
+    helm
+    kbenv
     neovim
     tfswitch-bin
+    vim-plug
     yq
     ```
 28. Install and configure `timeshift`:
