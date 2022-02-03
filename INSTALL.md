@@ -202,6 +202,8 @@
 27. Install development tools:
     ```
     aws-cli-v2-bin
+    aws-session-manager-plugin
+    aws-vault
     github-cli
     helm
     kbenv
