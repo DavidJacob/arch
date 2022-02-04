@@ -23,7 +23,7 @@ pacman -S acpi acpid acpi_call alacritty alsa-utils avahi \
     grub grub-btrfs gvfs gvfs-smb hplip inetutils ipset iptables-nft linux-headers mako man-db mtools \
     networkmanager network-manager-applet nfs-utils noto-color-emoji-fontconfig noto-fonts-emoji nss-mdns ntfs-3g \
     openbsd-netcat openssh pipewire pipewire-alsa pipewire-jack pipewire-pulse pipewire-v4l2 \
-    ranger reflector rsync terminus-font tlp ttf-victor-mono ttf-font-awesome v4l2-utils wpa_supplicant xdg-user-dirs xdg-utils xf86-video-nouveau
+    ranger reflector rsync terminus-font tlp ttf-victor-mono ttf-font-awesome v4l2-utils wl-clipboard wpa_supplicant xdg-user-dirs xdg-utils xf86-video-nouveau
 
 # Configure grub
 grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB
