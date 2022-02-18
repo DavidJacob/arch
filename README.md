@@ -1,2 +1,2 @@
 # arch
-Installation instructions for Arch Linux
+Installation instructions for Arch Linux.
